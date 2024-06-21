@@ -1,8 +1,7 @@
 import Question from "./question"
-const Mcq = ({ question}) => {
-    console.log(question.options)
+const Mcq = ({ question}:{question:any}) => {
   return (
-      <div className="py-4">
+      <div className="py-4 border-2 border-b p-4">
       <p>{ question.id}. {question?.question}</p>
       <div className="flex items-center justify-between gap-2 ml-3 max-w-[90%]">
       {Object.entries(question.options).filter(([key]) => key !== 'id').map(([key, value]) => (

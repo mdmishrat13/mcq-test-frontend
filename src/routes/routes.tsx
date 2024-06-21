@@ -5,6 +5,9 @@ import GuestRoute from "./../protected-routes/guestRoutes"
 import UserRoute from "./../protected-routes/userRoutes"
 import GuestLayout from "../layouts/guestLayout";
 import UserLayout from "../layouts/userLayout";
+import TeacherRoutes from "./teacherRoutes";
+import TeacherLayout from "../layouts/teacherLayout";
+import TeacherRoute from "../protected-routes/teacherRoutes";
 
 const routes = createBrowserRouter([
     {
@@ -13,9 +16,14 @@ const routes = createBrowserRouter([
         children: GuestRoutes
     },
     {
-        path: "/user",
+        path: "/student",
         element:<UserRoute><UserLayout/></UserRoute>,
         children: UserRoutes
+    },
+    {
+        path: "/teacher",
+        element:<TeacherRoute><TeacherLayout/></TeacherRoute>,
+        children: TeacherRoutes
     }
 ])
 

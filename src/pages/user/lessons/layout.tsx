@@ -7,7 +7,7 @@ console.log(datas)
 const Layout = () => {
   const [expand, setExpand] = useState({})
 
-  const handleExpand = (id: Number) => {
+  const handleExpand = (id: string) => {
     setExpand(prevExpand => {
       if (prevExpand[id]) {
         const { [id]: _, ...expand } = prevExpand;

@@ -1,6 +1,5 @@
 import { useState } from "react"
 import Mcq from "../../user/lessons/mcq"
-import { MdKeyboardArrowDown } from "react-icons/md"
 import EditChapter from "./editChapter"
 
 const Edit = () => {

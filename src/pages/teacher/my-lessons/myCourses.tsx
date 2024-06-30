@@ -1,10 +1,9 @@
-import React from 'react'
 
 const MyCourses = () => {
   return (
     <div className='grid md:grid-cols-4 items-center justify-between gap-2 py-4'>
-      {Array.from({ length: 10 }).map(item => (
-        <div className="max-w-sm p-6 bg-gray-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      {Array.from({ length: 10 }).map((item:any) => (
+        <div key={item} className="max-w-sm p-6 bg-gray-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
           </a>

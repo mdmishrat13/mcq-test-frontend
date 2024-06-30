@@ -3,7 +3,7 @@ import datas from "./data"
 
 const Lessons = () => {
   const {id} = useParams()
-  const notes = datas.find(data =>id == data.id)
+  const notes = datas.find((data:any) =>id == data.id)
   return (
     <div className="p-8 bg-white">
       {/* <div className="border-b"> */}

@@ -3,7 +3,6 @@ import datas from "./data"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
-console.log(datas)
 const Layout = () => {
   const [expand, setExpand] = useState({})
 

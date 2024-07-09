@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app',
         changeOrigin: true,
         secure: false
       }

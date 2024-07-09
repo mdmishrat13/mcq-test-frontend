@@ -18,9 +18,9 @@ const UserNavbar = () => {
           {/* Nav Links */}
           <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
             <li><Link className="hover:text-gray-200" to="#">Home</Link></li>
-            <li><Link className="hover:text-gray-200" to="#">Lessons</Link></li>
-            <li><Link className="hover:text-gray-200" to="lessons">My Classes</Link></li>
-            <li><a className="hover:text-gray-200" href="#">Teachers</a></li>
+            <li><Link className="hover:text-gray-200" to="lessons">Lessons</Link></li>
+            <li><Link className="hover:text-gray-200" to="my-lessons">My Classes</Link></li>
+            <li><Link className="hover:text-gray-200" to="teachers">Teachers</Link></li>
           </ul>
           {/* Header Icons */}
           <div className="hidden xl:flex items-center space-x-5">

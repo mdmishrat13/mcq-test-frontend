@@ -1,8 +1,10 @@
+import AllLessons from "../pages/user/all-lessons/all-lessons"
 import Home from "../pages/user/home/home"
 import Layout from "../pages/user/lessons/layout"
 import Lesson from "../pages/user/lessons/lesson"
 import Lessons from "../pages/user/lessons/lessons"
 import Profile from "../pages/user/profile/profile"
+import Teachers from "../pages/user/teachers/teachers"
 
 const UserRoutes = [
     {
@@ -10,11 +12,19 @@ const UserRoutes = [
         element: <Home/>
     },
     {
+        path: "teachers",
+        element: <Teachers/>
+    },
+    {
+        path: "lessons",
+        element: <AllLessons/>
+    },
+    {
         path: "profile",
         element: <Profile/>
     },
     {
-        path: "lessons",
+        path: "my-lessons",
         element: <Layout />,
         children: [
             {

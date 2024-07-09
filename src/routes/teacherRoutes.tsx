@@ -14,12 +14,13 @@ const TeacherRoutes = [
             },
             {
                 path: "create",
-                element: <Create/>
+                element: <Create />
             },
             {
-                path: "my-courses/:id",
+                path: "create/:id",
                 element: <Edit/>
             },
+            
             {
                 path: "analytics",
                 element: <h1 className="text-2xl text-center py-4 bg-gray-200"> Analytics is comming soon</h1>

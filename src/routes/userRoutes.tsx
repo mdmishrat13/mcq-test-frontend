@@ -24,11 +24,11 @@ const UserRoutes = [
         element: <Profile/>
     },
     {
-        path: "my-lessons",
+        path: "my-lessons/:id",
         element: <Layout />,
         children: [
             {
-                path: ":id",
+                path: "",
                 element: <Lessons />,
                 children: [
                     {

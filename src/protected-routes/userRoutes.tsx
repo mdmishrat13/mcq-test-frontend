@@ -11,21 +11,21 @@ const UserRoute: React.FC<{ children: React.ReactNode }> = ({ children }: { chil
   const loading = useSelector((state: RootState) => state.auth.loading);
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
-  useEffect(() => {
-    dispatch(checkLoggedIn())
-    if (!isLoggedIn) {
-      navigate('/login')
-    }
-  },[dispatch,isLoggedIn])
+  // useEffect(() => {
+  //   dispatch(checkLoggedIn())
+  //   if (!isLoggedIn) {
+  //     navigate('/login')
+  //   }
+  // },[dispatch,isLoggedIn])
 
   if (loading) {
     return <h1 className="text-2xl text-center">Loading...</h1>
   }
   
-  if (isLoggedIn) {
+  // if (isLoggedIn) {
     return <>{children}</>
-  }
-  return <Navigate to="/" replace/>
+  // }
+  // return <Navigate to="/" replace/>
 
 }
 

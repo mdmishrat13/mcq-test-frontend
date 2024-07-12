@@ -1,18 +1,64 @@
-import datas from "./data"
+
 import { useParams } from 'react-router-dom'
 import Mcq from "./mcq"
+import { useEffect, useState } from 'react'
+import api from '../../../redux/axios'
 
+type QusetionType = {
+  question: string,
+  options: [{
+    a: string,
+    b: string,
+    c: string,
+    d: string
+  },
+    ans: string,
+    _id: string
+  ]
+}
+type ChapterType = {
+  chapterName: string,
+  description: string,
+
+}
 const Lesson = () => {
-    const { id } = useParams()
-    const notes = datas?.find(data => id == data.id)
-    // console.log(notes)
-    const lesson = notes?.chapters.find(data => id == data.id)
-    console.log(lesson.questions)
+  const [questions, setQuestions] = useState<QusetionType[] | null>(null)
+  const [chapter, setChapter] = useState<ChapterType | null>(null)
+  const params = useParams()
+  useEffect(() => {
+
+    const getQuestion = async () => {
+      try {
+        const question = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter/question/${params.id}`)
+        if (!questions) {
+          setQuestions(question.data)
+        }
+        else {
+          setQuestions([...questions, question.data])
+        }
+      } catch (error) {
+
+      }
+    }
+    const getChapter = async () => {
+      try {
+        const chapterData = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter/${params.id}`)
+        
+       
+          setChapter( chapterData.data )
+       
+      } catch (error) {
+
+      }
+    }
+    getQuestion()
+    getChapter()
+  }, [])
   return (
-      <div>
-          <p className="text-lg text-center py-2 border-b">{lesson?.chapterName}</p>
-          {lesson?.questions?.map((question:any) => <Mcq question={question} />)}
-        </div>
+    <div>
+      <p className="text-lg text-center py-2 border-b">{chapter?.chapterName}</p>
+      <Mcq question={questions} />
+    </div>
   )
 }
 

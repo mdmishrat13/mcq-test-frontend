@@ -16,11 +16,11 @@ const GuestRoutes: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   
   console.log(isLoggedIn)
 
-  if (!isLoggedIn) {
+  // if (!isLoggedIn) {
     
     return  <>{children}</>
-  }
-  return <Navigate to="student" replace/>
+  // }
+  // return <Navigate to="student" replace/>
 }
 
 export default GuestRoutes

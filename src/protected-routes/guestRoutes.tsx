@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "../hooks.tsx/hooks";
 import { RootState } from "../redux/auth/store";
-import { Navigate } from "react-router-dom";
 import { checkLoggedIn } from "../redux/auth/userSlice";
 
 const GuestRoutes: React.FC<{ children: React.ReactNode }> = ({ children }) => {

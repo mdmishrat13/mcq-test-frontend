@@ -1,15 +1,15 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useSelector } from "../hooks.tsx/hooks";
-import { AppDispatch, RootState } from "../redux/auth/store";
-import { useDispatch } from "react-redux";
-import { checkLoggedIn } from "../redux/auth/userSlice";
-import { Navigate, useNavigate,} from "react-router-dom";
+import { RootState } from "../redux/auth/store";
+// import { useDispatch } from "react-redux";
+// import { checkLoggedIn } from "../redux/auth/userSlice";
+// import { Navigate, useNavigate,} from "react-router-dom";
 
 const UserRoute: React.FC<{ children: React.ReactNode }> = ({ children }: { children: React.ReactNode }) => {
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate()
+  // const dispatch = useDispatch<AppDispatch>();
+  // const navigate = useNavigate()
   const loading = useSelector((state: RootState) => state.auth.loading);
-  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  // const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   // useEffect(() => {
   //   dispatch(checkLoggedIn())

@@ -89,7 +89,7 @@ const authSlice = createSlice({
       .addCase(loginUser.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
         state.isLoggedIn = true;
-        state.toasts = "login failed";
+        state.toasts = action.payload
         state.user = null;
       })
       .addCase(registerUser.pending, (state) => {
@@ -103,7 +103,7 @@ const authSlice = createSlice({
       })
       .addCase(registerUser.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
-        // state.toasts = action.payload;
+        state.toasts = action.payload;
       })
       .addCase(checkLoggedIn.pending, (state) => {
         state.loading = true;
@@ -114,7 +114,8 @@ const authSlice = createSlice({
       })
       .addCase(checkLoggedIn.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
-        state.isLoggedIn= false
+        state.isLoggedIn = false
+        state.toasts= action.payload
       })
       .addCase(logoutUser.pending, (state) => {
         state.loading = true
@@ -123,12 +124,12 @@ const authSlice = createSlice({
       .addCase(logoutUser.fulfilled, (state, action: PayloadAction<any>) => {
         state.isLoggedIn = false;
         state.loading = false;
-        // state.toasts = action.payload
+        state.toasts = action.payload
       })
       .addCase(logoutUser.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
         state.isLoggedIn= true
-        // state.toasts = action.payload;
+        state.toasts = action.payload;
       })
   },
 });

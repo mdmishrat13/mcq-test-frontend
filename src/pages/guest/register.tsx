@@ -2,7 +2,7 @@ import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ReactNode } from "react";
-import { registerUser } from "../../redux/auth/userSlice";
+import { registerUser } from "../../redux/auth/userThunk";
 import { useDispatch} from "../../hooks.tsx/hooks";
 import { RegisterPayload} from "../../redux/auth/types";
 

@@ -14,7 +14,7 @@ const Teachers = () => {
         const fetchTeachers = async () => {
             try {
                 setLoading(true)
-                const response = await api.get("https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/auth/users");
+                const response = await api.get("import.meta.env.VITE_BASE_URL_BACKEND/api/v1/auth/users");
                 setTeachers(response.data);
                setLoading(false)
               } catch (error) {

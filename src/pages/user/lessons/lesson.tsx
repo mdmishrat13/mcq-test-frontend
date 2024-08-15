@@ -29,7 +29,7 @@ const Lesson = () => {
 
     const getQuestion = async () => {
       try {
-        const question = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter/question/${params.id}`)
+        const question = await api.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapter/question/${params.id}`)
         if (!questions) {
           setQuestions(question.data)
         }
@@ -42,7 +42,7 @@ const Lesson = () => {
     }
     const getChapter = async () => {
       try {
-        const chapterData = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter/${params.id}`)
+        const chapterData = await api.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapter/${params.id}`)
         
        
           setChapter( chapterData.data )

@@ -52,7 +52,7 @@ const EditChapter: React.FC<EditChapterProps> = ({ chapter }) => {
     useEffect(() => {
         const getQuestions = async () => {
             try {
-                const question = await axios.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter/question/${chapter._id}`)
+                const question = await axios.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapter/question/${chapter._id}`)
                 if (questions) {
 
                     setQuestions([...questions, question.data])
@@ -73,7 +73,7 @@ const EditChapter: React.FC<EditChapterProps> = ({ chapter }) => {
 
     const createQuestion: SubmitHandler<QuestionType> = async (data: any) => {
         try {
-            const createdQuestion = await axios.post(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter/question`, { ...data, chapterId: chapter._id })
+            const createdQuestion = await axios.post(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapter/question`, { ...data, chapterId: chapter._id })
             console.log("created question", createdQuestion)
             if (questions) {
                 setQuestions([...questions, createdQuestion.data.data])

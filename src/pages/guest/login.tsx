@@ -2,7 +2,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ReactNode} from "react";
-import { loginUser } from "../../redux/auth/userSlice";
+import { loginUser } from "../../redux/auth/userThunk";
 import { useDispatch,} from "../../hooks.tsx/hooks";
 import { LoginPayload } from "../../redux/auth/types";
 

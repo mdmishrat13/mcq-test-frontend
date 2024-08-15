@@ -27,7 +27,7 @@ const Layout = () => {
   useEffect(() => {
     const getCourse = async () => {
       try {
-        const course = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/${params.id}`)
+        const course = await api.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/${params.id}`)
         setCourse(course.data)
       } catch (error) {
         
@@ -36,7 +36,7 @@ const Layout = () => {
 
     const getChapter = async () => {
       try {
-        const chapter = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapters/${params.id}`)
+        const chapter = await api.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapters/${params.id}`)
         setChapter(chapter.data)
       } catch (error) {
         

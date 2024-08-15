@@ -9,11 +9,18 @@ export interface RegisterUser {
   password: string;
 }
 
+export interface User {
+  name: string;
+  email: string;
+  bio?: string;
+  profilePicture?:string
+}
+
 export interface AuthState {
-  user: LoginUser | null;
+  isAuthenticated: boolean;
+  user: User | null;
   loading: boolean;
   toasts: string|null;
-  isLoggedIn: boolean;
 }
 
 export interface LoginPayload {

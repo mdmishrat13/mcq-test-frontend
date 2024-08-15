@@ -45,7 +45,7 @@ const Edit = () => {
     useEffect(() => {
         const fetchCourseData = async () => {
             try {
-                const course = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/${params.id}`)
+                const course = await api.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/${params.id}`)
                 setCourseData(course.data)
 
             } catch (error) {
@@ -54,7 +54,7 @@ const Edit = () => {
         }
         const fetchChapter = async () => {
             try {
-                const chapters = await api.get(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapters/${params.id}`)
+                const chapters = await api.get(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapters/${params.id}`)
                 setChapters(chapters.data)
 
             } catch (error) {
@@ -67,7 +67,7 @@ const Edit = () => {
 
     const createChapter = async (data: any) => {
         try {
-            const createdChapter = await api.post(`https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/chapter`, {...data,courseId:params.id})
+            const createdChapter = await api.post(`import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/chapter`, {...data,courseId:params.id})
             if (chapters) {
                 setChapters([...chapters, createdChapter.data.data]);
             } else {

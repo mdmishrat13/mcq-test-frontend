@@ -1,7 +1,7 @@
 import { IoLogOutOutline } from "react-icons/io5"
 import { Link } from "react-router-dom"
 import { useDispatch } from "../../hooks.tsx/hooks";
-import { logoutUser } from "../../redux/auth/userSlice";
+import { logoutUser } from "../../redux/auth/userThunk";
 
 const UserNavbar = () => {
   const dispatch = useDispatch();

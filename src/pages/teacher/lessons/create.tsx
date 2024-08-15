@@ -21,7 +21,7 @@ const Create = () => {
   
   const onSubmit = async(data: any) => {
     try {
-      const createdCourse = await api.post('https://e-learning-server-git-main-mdmishrat13s-projects.vercel.app/api/v1/course/create', data)
+      const createdCourse = await api.post('import.meta.env.VITE_BASE_URL_BACKEND/api/v1/course/create', data)
       console.log(createdCourse.data.data._id)
       navigate(`${createdCourse.data.data._id}`)
     } catch (error) {

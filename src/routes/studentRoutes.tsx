@@ -6,9 +6,9 @@ import Layout from "../pages/user/lessons/layout"
 import Profile from "../pages/user/profile/profile"
 import Teachers from "../pages/user/teachers/teachers"
 
-const UserRoutes = [
+const studentRoutes = [
     {
-        path: "",
+        path:'/',
         element: <Home/>
     },
     {
@@ -42,4 +42,4 @@ const UserRoutes = [
     
 ]
 
-export default UserRoutes
+export default studentRoutes
